@@ -1,0 +1,16 @@
+#Systemd service file for klipper
+[Unit]
+Description=Klippy 3D printer host
+After=network.target
+After=klipper-firmware.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=debian
+RemainAfterExit=yes
+ExecStart=/home/debian/klippy-env/bin/python /home/debian/klipper/klippy/klippy.py /home/debian/printer.cfg -l /tmp/klippy.log
+Restart=always
+RestartSec=10

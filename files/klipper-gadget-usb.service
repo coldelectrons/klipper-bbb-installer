@@ -1,0 +1,15 @@
+#Systemd service file for klipper
+[Unit]
+Description=Klippy 3D printer usb gadget
+After=klipper.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=debian
+RemainAfterExit=yes
+ExecStart=/usr/bin/python /home/debian/klippy-gadget.py /dev/ttyGS1 /tmp/printer
+Restart=always
+RestartSec=10

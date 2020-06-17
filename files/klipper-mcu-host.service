@@ -1,0 +1,13 @@
+#Systemd service file for klipper-firmware
+[Unit]
+Description=Starts klipper-mcu-host on startup
+After=pinconfig.service
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+User=debian
+RemainAfterExit=yes
+ExecStart=/home/debian/klipper-mcu-host.sh
