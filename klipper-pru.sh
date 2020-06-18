@@ -38,10 +38,10 @@ pru_start()
     sleep 1
 
     log_daemon_msg "Starting pru"
-        echo 'am355x-pru1-fw' > $RPROC1/firmware
-        echo 'start' > $RPROC1/state
-        echo 'am355x-pru0-fw' > $RPROC0/firmware
+        echo 'klipper_pru0' > $RPROC0/firmware
+        echo 'klipper_pru1' > $RPROC1/firmware
         echo 'start' > $RPROC0/state
+        echo 'start' > $RPROC1/state
 
     # log_daemon_msg "Loading ADC module"
     # echo 'BB-ADC' > /sys/devices/platform/bone_capemgr/slots
