@@ -9,34 +9,34 @@
     config-pin p9.20 i2c
 
     # configure P9 GPIO ports
-    config-pin p9.11 pruin #endstop x2
-    config-pin p9.13 pruin #endstop z1
-    config-pin p9.18 pruin #endstop z2
-    config-pin p9.23 pruin #endstop y1
-    config-pin p9.25 pruin #endstop x1
-    config-pin p9.28 pruin #endstop y2
-    config-pin p9.24 pruin #fault z
+    config-pin p9.11 gpio_input #endstop x2
+    config-pin p9.13 gpio_input #endstop z1
+    config-pin p9.18 gpio_input #endstop z2
+    config-pin p9.23 gpio_input #endstop y1
+    config-pin p9.25 gpio_input #endstop x1
+    config-pin p9.28 gpio_input #endstop y2
+    config-pin p9.24 gpio_input #fault z
 
-    config-pin p9.12 pruout #step_e
-    config-pin p9.14 pruout #servo 0
-    config-pin p9.16 pruout #servo 1
-    config-pin p9.41 pruout #enable
+    config-pin p9.12 gpio #step_e
+    config-pin p9.14 gpio #servo 0
+    config-pin p9.16 gpio #servo 1
+    config-pin p9.41 gpio #enable
 
     # configure P8 GPIO ports
-    config-pin p8.8 pruin #fault h
-    config-pin p8.9 pruin #fault y
-    config-pin p8.18 pruin #fault e
-    config-pin p8.10 pruin #fault x
+    config-pin p8.08 gpio_input #fault h
+    config-pin p8.09 gpio_input #fault y
+    config-pin p8.18 gpio_input #fault e
+    config-pin p8.10 gpio_input #fault x
 
-    config-pin p8.11 pruout #step h
-    config-pin p8.12 pruout #step y
-    config-pin p8.13 pruout #step z
-    config-pin p8.14 pruout #dir z
-    config-pin p8.15 pruout #dir e
-    config-pin p8.16 pruout #dir h
-    config-pin p8.17 pruout #step x
-    config-pin p8.19 pruout #dir y
-    config-pin p8.26 pruout #dir x
+    config-pin p8.11 gpio #step h
+    config-pin p8.12 gpio #step y
+    config-pin p8.13 gpio #step z
+    config-pin p8.14 gpio #dir z
+    config-pin p8.15 gpio #dir e
+    config-pin p8.16 gpio #dir h
+    config-pin p8.17 gpio #step x
+    config-pin p8.19 gpio #dir y
+    config-pin p8.26 gpio #dir x
 
     # configure PWM ports
     #config-pin p9.14 pwm #servo 0
