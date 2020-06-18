@@ -13,7 +13,7 @@ pru_stop()
     # Shutdown existing Klipper instance (if applicable). The goal is to
     # put the GPIO pins in a safe state.
     if [ -c /dev/rpmsg_pru30 ]; then
-        log_daemon_msg "Attempting to shutdown PRU..."
+        echo "Attempting to shutdown PRU..."
         set -e
         ( echo "FORCE_SHUTDOWN" > /dev/rpmsg_pru30 ) 2> /dev/null || ( log_action_msg "Firmware busy! Please shutdown Klipper and then retry." && exit 1 )
         sleep 1
@@ -22,7 +22,7 @@ pru_stop()
         set +e
     fi
 
-    log_daemon_msg "Stopping pru"
+    echo "Stopping pru"
         echo 'stop' > $RPROC0/state
         echo 'stop' > $RPROC1/state
 }
@@ -37,14 +37,11 @@ pru_start()
     fi
     sleep 1
 
-    log_daemon_msg "Starting pru"
+    echo "Starting pru"
         echo 'klipper_pru0' > $RPROC0/firmware
         echo 'klipper_pru1' > $RPROC1/firmware
         echo 'start' > $RPROC0/state
         echo 'start' > $RPROC1/state
-
-    # log_daemon_msg "Loading ADC module"
-    # echo 'BB-ADC' > /sys/devices/platform/bone_capemgr/slots
 }
 
 pru_start
