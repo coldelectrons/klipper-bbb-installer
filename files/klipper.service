@@ -2,7 +2,9 @@
 [Unit]
 Description=Klippy 3D printer host
 After=network.target
-After=klipper-firmware.service
+Wants=pin-config.service
+Wants=klipper-pru.service
+Wants=klipper-mcu-host.service
 
 [Install]
 WantedBy=multi-user.target

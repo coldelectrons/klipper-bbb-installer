@@ -1,13 +1,13 @@
 #Systemd service file for klipper-firmware
 [Unit]
 Description=Starts klipper-pru on startup
-After=pinconfig.service
+Wants=pinconfig.service
 
 [Install]
 WantedBy=multi-user.target
 
 [Service]
 Type=simple
-User=debian
+#User=debian
 RemainAfterExit=yes
 ExecStart=/home/debian/klipper-pru.sh
